@@ -1,58 +1,59 @@
 # 💼 Cashanova AI
 
-> 🧠 A smart AI-powered **Finance Dashboard** built with **Streamlit** to analyze, visualize, and manage your income, expenses, and assets — all in one beautiful interface.  
-> 💜 Built and created by **Pramzz**  
+> 🧠 A next-generation **personal finance dashboard** built with **Streamlit** and powered by **Google Gemini AI**.  
+> Analyze, visualize, and manage your finances effortlessly — in style.  
+> 💜 *Built and created by **Pramzz***  
 
 ---
 
 ## 🌟 Overview
 
-**Cashanova AI** is a modern personal finance assistant that helps you track and understand your finances effortlessly.  
-Upload your financial PDF, enter data manually, or fill a structured statement — Cashanova AI automatically:
-- Extracts and processes financial data  
-- Converts across multiple currencies  
-- Summarizes your income, expenses, and assets  
-- Displays interactive visualizations and metrics  
-- Saves your data securely in local CSV files  
+**Cashanova AI** is a smart financial analytics app that lets you:
 
-> A perfect blend of **AI + Finance + Design**, made for individuals who value both data and style.
+- Enter or upload your financial data  
+- Automatically calculate income, expenses, profit, and assets  
+- Visualize data with rich, interactive charts  
+- Save and export your reports to CSV or image formats  
+- Optionally connect to **Google Gemini AI** for intelligent insights  
+
+The app combines clean UI, multi-currency support, and practical analytics to help you understand your money beautifully.
 
 ---
 
 ## ✨ Features
 
 ### 🧾 Input Options
-- 📂 Upload **Finance PDFs** and extract data automatically  
-- ✍️ Enter finance details manually (key-value format)  
-- 📊 Fill a structured **Financial Statement Form** with income, assets, and expenses  
+- ✍️ **Enter Data Manually** — simple key : value pairs (e.g., `Salary: 25000`)  
+- 📊 **Structured Financial Statement** — dedicated fields for income, expenses, and assets  
 
-### 💱 Currency Settings
-- Supports: INR, USD, EUR, GBP, JPY, CAD, AUD, CNY, SGD, AED  
-- Auto-converts input values between currencies  
-- Shows accurate symbols and rates  
+### 💱 Currency Conversion
+- Supports **10+ currencies** including INR, USD, EUR, GBP, JPY, AUD, CAD, CNY, SGD, AED  
+- Auto-converts between selected and input currencies  
+- Displays values with correct symbols and formatting  
 
 ### 📈 Financial Dashboard
-- 💰 Total Income  
-- 💸 Total Expenses  
-- 📊 Net Income  
-- 🏦 Total Assets  
+- Real-time summary cards for **Income**, **Expenses**, **Net Income**, and **Assets**  
+- Visual charts built with **Plotly Express**:
+  - 💵 Income Breakdown (Pie Chart)  
+  - 💸 Expense Breakdown (Pie Chart)  
+  - 📊 Income vs Expenses Comparison (Bar Chart)  
+  - 🏦 Assets Breakdown (Bar Chart)  
 
-> Visualized beautifully using **Plotly Express** interactive charts.
+### 💾 Data Storage & Export
+- Automatically logs and saves data to `finance_data.csv`  
+- Download:
+  - 📑 Finance CSV file  
+  - 🖼️ Charts as PNG images (requires `kaleido`)  
 
-### 💾 Data Management
-- Saves all financial records to `finance_data.csv`  
-- Automatically logs interactions to `finance_agent_log.csv`  
-- Allows easy download of CSVs and chart PNGs  
+### 🧠 AI-Ready (Optional)
+- Configure your **Google Gemini API Key**  
+- Embedding functions & retriever classes are included for future finance Q&A  
 
-### 🧠 AI Integration (Optional)
-- Supports **Google Gemini API key** for AI-powered Q&A  
-- Uses embeddings and retriever system for context-aware financial answers  
-
-### 🎨 Stunning Design
-- Gradient background (`#667eea → #764ba2`)  
-- Glassmorphism cards  
-- Modern **Inter font** and animated buttons  
-- Intuitive user experience  
+### 🎨 Elegant UI
+- Gradient theme (`#667eea → #764ba2`)  
+- Glassmorphism cards, soft shadows & rounded inputs  
+- Inter Font Family + animated buttons  
+- Fully responsive Streamlit layout  
 
 ---
 
@@ -60,13 +61,13 @@ Upload your financial PDF, enter data manually, or fill a structured statement �
 
 | Category | Technology |
 |-----------|-------------|
-| Frontend | Streamlit |
-| Visualization | Plotly Express |
-| AI Engine | Google Generative AI (Gemini) |
-| File Processing | PyPDF2 |
-| Data Handling | Pandas, CSV |
-| Text Splitting | LangChain Text Splitters |
 | Language | Python 3.10+ |
+| Framework | Streamlit |
+| Visualization | Plotly Express |
+| Data Handling | Pandas, CSV |
+| AI Engine | Google Generative AI (Gemini) |
+| File Parsing | LangChain Text Splitters |
+| Misc | PyPDF2, Math, Dataclasses |
 
 ---
 
