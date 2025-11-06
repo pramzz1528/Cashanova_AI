@@ -4,7 +4,6 @@ import math
 from dataclasses import dataclass
 import streamlit as st
 from datetime import datetime
-from PyPDF2 import PdfReader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import google.generativeai as genai
 from typing import Any, Dict, List
@@ -116,13 +115,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown('<div class="title">💼 Cashanova AI </div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Built and Created by Pramz <b>Pramzz</b> </div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Built and Created by<b>Pramzz</b> </div>', unsafe_allow_html=True)
 
 # ------------------------------------------------------------
 # 🔑 GEMINI API CONFIG
 # ------------------------------------------------------------
 with st.container():
-    st.markdown("### 🔑 API Configuration")
+    st.markdown("### 🔐API Configuration")
     api_key = st.text_input("Enter your Google Gemini API key (starts with 'AIza'):", type="password", help="Get your API key from Google AI Studio")
 
 if not api_key:
@@ -211,31 +210,11 @@ st.markdown("### 🧾 Choose Input Type")
 # Toggle to fully disable Gemini Q&A features (keeps CSV and charts only)
 ENABLE_QA = False
 
-option = st.radio("Select input method:", ["Upload Finance PDF", "Enter Data Manually", "Structured Financial Statement"], horizontal=True)
+option = st.radio("Select input method:", ["Enter Data Manually", "Structured Financial Statement"], horizontal=True)
 raw_text = ""
 financial_data = {}
 
-if option == "Upload Finance PDF":
-    uploaded_file = st.file_uploader("📂 Upload your Finance PDF", type=["pdf"], help="Upload a PDF file containing financial information")
-    if uploaded_file:
-        try:
-            pdf_reader = PdfReader(uploaded_file)
-            for page in pdf_reader.pages:
-                text = page.extract_text()
-                if text:
-                    raw_text += text + "\n"
-            if not raw_text.strip():
-                st.error("⚠️ No readable text found in this PDF. Try a text-based one.")
-                st.stop()
-            st.success("✅ Text successfully extracted from PDF!")
-        except Exception as e:
-            st.error(f"❌ PDF reading error: {e}")
-            st.stop()
-    else:
-        st.info("👆 Upload your finance PDF to start.")
-        st.stop()
-
-elif option == "Enter Data Manually":
+if option == "Enter Data Manually":
     st.info(f"💱 Enter amounts in {currency_symbol} {selected_currency}. Currency symbols will be automatically detected and converted if needed.")
     raw_text = st.text_area(
         "📝 Enter your finance details (income, expenses, etc.):",
